@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: taint
+  labels:
+    purpose: taint-node
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c
+  containers:
+  - name: nginx
+    image: nginx
+  #   volumeMounts:
+  #   - name: persistent-storage
+  #     mountPath: /usr/share/nginx/html
+  # volumes:
+  # - name: persistent-storage
+  #   persistentVolumeClaim:
+  #     ClaimName: ebs-static
